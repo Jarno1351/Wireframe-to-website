@@ -335,7 +335,7 @@ main .mainContent .postContainer .iconHolder svg:hover{
     animation-fill-mode: forwards;
 }
 .commentTab .submitComment{
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 .commentTab .submitComment input{
     width: 80%;
@@ -480,4 +480,14 @@ main .mainContent .postContainer .iconHolder svg:hover{
         transform: scale(1.02);
     }
 
+}
+@media screen and (max-width: 588px) {
+    .commentTab .submitComment{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .commentTab .submitComment input{
+        width: 100%;
+    }
 }

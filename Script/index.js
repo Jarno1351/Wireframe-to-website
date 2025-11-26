@@ -1,7 +1,9 @@
 const popSound = new Audio('./Audio/PopSound.mp3');
 const wooshSound = new Audio('./Audio/Woosh.mp3');
+const tapSound = new Audio('./Audio/Tap.mp3');
 popSound.preload = "auto";
 wooshSound.preload = "auto";
+tapSound.preload = "auto";
 
 function openSide(){
     const hamburger = document.getElementById(`hamburgerBtn`);
@@ -14,7 +16,7 @@ function openSide(){
     sideBar.classList.toggle('sidebar-shown');
     sideBar.classList.toggle('sidebar-hidden');
     main.classList.toggle('main-hidden');
-    wooshSound.play()
+    tapSound.play()
     if(hamburger.classList[0] === "clicked"){
         main.style.gridArea ="side1"
         sideBar.style.gridArea ="main"
@@ -69,18 +71,16 @@ function openComment(){
 function closeToMenu(){
     const commentTab = document.getElementById(`commentTab`);
     const filter = document.getElementById(`darkFilter`);
-    wooshSound.play()
     commentTab.classList.remove("commentTabOpen");
     commentTab.classList.toggle("commentTabClose");
     console.log(commentTab.className)
+    setTimeout(()=>{wooshSound.play()},298)
     setTimeout(()=>{
         commentTab.style.display = "none";
         filter.style.display = "none"
         commentTab.classList.toggle("commentTabClose");
     },400);
-    wooshSound.pause();
-    wooshSound.currentTime = 0;
-    
+
 }
 handleScreenChange(mq);
 mq.addEventListener('change', handleScreenChange);
