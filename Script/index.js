@@ -1,6 +1,7 @@
 const popSound = new Audio('../Audio/PopSound.mp3');
 const wooshSound = new Audio('../Audio/Woosh.mp3');
-popSound.preload = "auto"
+popSound.preload = "auto";
+wooshSound.preload = "auto";
 
 function openSide(){
     const hamburger = document.getElementById(`hamburgerBtn`);
