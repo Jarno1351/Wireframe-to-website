@@ -84,3 +84,51 @@ function closeToMenu(){
 }
 handleScreenChange(mq);
 mq.addEventListener('change', handleScreenChange);
+
+// For adding comments
+const container = document.getElementById("commentTab");
+const input = document.getElementById("commentAdd");
+const submitBtn = document.getElementById("submit");
+const lastItem = container.lastElementChild;
+loadFromLocalStorage();
+
+submitBtn.addEventListener("click", ()=>{
+    popSound.play();
+    const username = document.getElementById(`username`)
+    const inputValue = input.value.trim()
+    if (inputValue === ""){return};
+    const newDiv = document.createElement("div");
+    newDiv.classList.add('message');
+    const newH3 = document.createElement("h3");
+    newH3.textContent = username.textContent
+    const newP = document.createElement("p");
+    newP.textContent = inputValue
+    newDiv.append(newH3)
+    newDiv.append(newP);
+    container.insertBefore(newDiv, lastItem);
+
+    saveToLocalStorage(username.textContent, inputValue);
+    input.value = ""; 
+})
+
+function loadFromLocalStorage(){
+    const messages = JSON.parse(localStorage.getItem("messages")) || [];
+
+    messages.forEach(({user,message})=>{
+        const newDiv = document.createElement("div");
+        newDiv.classList.add('message');
+        const newH3 = document.createElement("h3");
+        newH3.textContent = user
+        const newP = document.createElement("p");
+        newP.textContent = message
+        newDiv.append(newH3,newP);
+        container.insertBefore(newDiv, lastItem);
+
+    })
+}
+function saveToLocalStorage(user, message) {
+    let messages = JSON.parse(localStorage.getItem("messages")) || [];
+
+    messages.push({ user, message });
+    localStorage.setItem("messages", JSON.stringify(messages));
+}
