@@ -1,5 +1,5 @@
-const popSound = new Audio('../Audio/PopSound.mp3');
-const wooshSound = new Audio('../Audio/Woosh.mp3');
+const popSound = new Audio('./Audio/PopSound.mp3');
+const wooshSound = new Audio('./Audio/Woosh.mp3');
 popSound.preload = "auto";
 wooshSound.preload = "auto";
 
@@ -14,6 +14,7 @@ function openSide(){
     sideBar.classList.toggle('sidebar-shown');
     sideBar.classList.toggle('sidebar-hidden');
     main.classList.toggle('main-hidden');
+    wooshSound.play()
     if(hamburger.classList[0] === "clicked"){
         main.style.gridArea ="side1"
         sideBar.style.gridArea ="main"
