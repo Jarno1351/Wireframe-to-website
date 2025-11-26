@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: 120ms ease-in-out;
+    transition: 140ms ease-in-out;
     font-family: 'Poppins', sans-serif, arial;
 }
 
@@ -18,6 +18,11 @@
 }
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  height: 100svh;
+}
+html::-webkit-scrollbar{
+    display: none;
 }
 
 body{
@@ -27,8 +32,8 @@ body{
     grid-template-areas: 
     "nav nav nav"
     "side1 main side2";
-    min-width: 100%;
-    min-height: 100svh;
+    width: 100%;
+    height: 100svh;
     position: relative;
     z-index: 1;
 }
@@ -275,6 +280,9 @@ main .mainContent .postContainer .iconHolder svg:hover{
     margin-right: 8px;
     margin-left: 8px;
 }
+.miscellaneousSideBar .messageTab{
+    margin-bottom: 100px;
+}
 .miscellaneousSideBar .messageTab h4:hover{
     transform: scale(1.1);
     border: 1px solid black;
@@ -283,14 +291,18 @@ main .mainContent .postContainer .iconHolder svg:hover{
     cursor: pointer;
 }
 .miscellaneousSideBar a #contact{
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    position: fixed;
+    top: 95%;
+    right: 24px;
     font-size: 16px;
 }
 .miscellaneousSideBar a #contact:hover{
     cursor: pointer;
-    transform: translateX(-24px);
+    border:1px solid #000000;
+    background-color: rgba(255, 255, 255, 0.384);
+    backdrop-filter: blur(2px);
+    padding: 4px;
+    transform: translate(-24px,-10px);
     font-size: 18px;
     animation: colorSwitch ease-in-out 5s infinite;
 }
