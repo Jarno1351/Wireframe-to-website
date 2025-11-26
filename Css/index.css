@@ -351,7 +351,7 @@ main .mainContent .postContainer .iconHolder svg:hover{
         transform: translateY(0px);
     }
 }
-.commentTab .message p{
+.commentTab .message p, .commentTab .message span a{
     text-align: justify;
 }
 .darkFilter{
@@ -413,6 +413,7 @@ main .mainContent .postContainer .iconHolder svg:hover{
     }
     .commentTab{
         right: 54px;
+        padding: 50px 50px 0px 50px;
     }
     nav img{
         display: none;

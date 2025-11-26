@@ -24,6 +24,7 @@ function openSide(){
         sideBar.style.gridArea ="side1"
     }
     
+    
 }
 const mq = window.matchMedia('(min-width: 887px)');
 function handleScreenChange(e){
@@ -77,6 +78,8 @@ function closeToMenu(){
         filter.style.display = "none"
         commentTab.classList.toggle("commentTabClose");
     },400);
+    wooshSound.pause();
+    wooshSound.currentTime = 0;
     
 }
 handleScreenChange(mq);
