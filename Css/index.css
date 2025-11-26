@@ -334,11 +334,13 @@ main .mainContent .postContainer .iconHolder svg:hover{
     animation: slideUpClose ease-out 0.8s;
     animation-fill-mode: forwards;
 }
+.commentTab .submitComment{
+    margin-bottom: 24px;
+}
 .commentTab .submitComment input{
     width: 80%;
     border-radius: 8px;
-    padding: 8px;
-    margin-bottom: 24px;
+    padding: 8px;  
 }
 .commentTab .submitComment button{
     background-color: var(--primary_color);
