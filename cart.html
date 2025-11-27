@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="./Css/cart.css">
+</head>
+<body>
+    <nav>
+        <div class="imageCont">
+            <img src="./images/logo-placeholder.png" alt="logo-placeholder" height="50px">
+        </div>
+        <div class="nav-selection">
+            <a href="index.html" title="Home">
+                <svg class="home-icon" width="28px" height="28px" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 6V15H6V11C6 9.89543 6.89543 9 8 9C9.10457 9 10 9.89543 10 11V15H15V6L8 0L1 6Z" fill="#000000"/>
+                </svg>
+            </a>
+            <a href="cart.html" >
+                <svg class="active" fill="#000000" width="28px" height="28px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 10.016l4-10.016h24l4 10.016q0 1.664-1.184 2.816t-2.816 1.184-2.816-1.184-1.184-2.816q0 1.664-1.184 2.816t-2.816 1.184-2.816-1.184-1.184-2.816q0 1.664-1.184 2.816t-2.816 1.184-2.816-1.184-1.184-2.816q0 1.664-1.184 2.816t-2.816 1.184-2.816-1.184-1.184-2.816zM2.016 30.016h28v1.984h-28v-1.984zM4 28v-12q2.272 0 4-1.536v9.536h16v-9.536q1.728 1.536 4 1.536v12h-24z"></path>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <main class="cart-container">
+        <h2>Your Cart</h2>
+        <div class="cart-items">
+            <!-- Example product -->
+            <div class="cart-item">
+                <img src="./images/vegetables-576251_1280.webp" alt="Product Image">
+                <div class="item-details">
+                    <h3>Product Name 1</h3>
+                    <p>Amount: 1</p>
+                </div>
+            </div>
+            <div class="cart-item">
+                <img src="./images/vegetables-576251_1280.webp" alt="Product Image">
+                <div class="item-details">
+                    <h3>Product Name 2</h3>
+                    <p>Amount: 2</p>
+                </div>
+            </div>
+        </div>
+        <div class="cart-summary">
+            <p>Total: $150</p>
+            <button id="checkoutBtn" onclick="openOrderPopup()">Check Out</button>
+        </div>
+    </main>
+    <div class="darkFilter" id="orderFilter"></div>
+    <div class="orderPopup" id="orderPopup">
+    <div class="orderHeader">
+        <h3>Order on the way 🚚</h3>
+        <button class="closeOrderBtn" onclick="closeOrderPopup()">×</button>
+    </div>
+    <div class="orderContent">
+        <p>Your order #12345 is on its way!</p>
+        <p>Estimated delivery: 30-45 minutes</p>
+    </div>
+    <div class="orderFooter">
+        <button onclick="closeOrderPopup()">OK</button>
+    </div>
+    </div>
+
+
+    <script src="./Script/cart.js" defer></script>
+</body>
+</html>

@@ -154,6 +154,14 @@ main{
 .profileSideBar .sideBtn.active{
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.712);
 }
+.profileSideBar a{
+    display: flex;
+    flex-direction: column;
+}
+.profileSideBar a:link,.profileSideBar a:active{
+    text-decoration: none;
+    color: #000000;
+}
 #logoutBtn{
     height: 40px;
 }
@@ -490,4 +498,123 @@ main .mainContent .postContainer .iconHolder svg:hover{
     .commentTab .submitComment input{
         width: 100%;
     }
+}
+
+.chatPopup{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(.95);
+  width: 360px;
+  max-width: calc(100vw - 40px);
+  height: 78vh;
+  max-height: 700px;
+  background: #fff;
+  border-radius: 16px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+  z-index: 3000;
+  transition: transform .18s ease, opacity .18s ease;
+  overflow: hidden;
+}
+
+.chatPopupOpen{
+  display: flex !important;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.chatHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid hsl(from var(--gray_color) h s calc(l + 10));
+}
+
+.chatHeader h3{
+  font-size: 16px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.closeChatBtn{
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.chatMessages{
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 6px;
+  scroll-behavior: smooth;
+}
+
+.chatBubble{
+  padding: 8px 12px;
+  border-radius: 14px;
+  background: hsl(from var(--gray_color) h s calc(l + 6));
+  max-width: 78%;
+  width: fit-content;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  font-size: 14px;
+}
+
+.chatBubble.me{
+  background: hsl(from var(--primary_color) h s calc(l - 30));
+  color: white;
+  margin-left: auto;
+}
+
+
+.chatMeta{
+  font-size: 11px;
+  opacity: .7;
+  margin-top: 4px;
+}
+
+
+.chatInputBox{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding-top: 6px;
+  border-top: 1px solid hsl(from var(--gray_color) h s calc(l + 10));
+}
+
+.chatInputBox input{
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid hsl(from var(--gray_color) h s calc(l + 14));
+  outline: none;
+}
+
+.chatInputBox button{
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 2px solid black;
+  background: var(--primary_color);
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px){
+  .chatPopup{
+    width: 92vw;
+    height: 70vh;
+    padding: 10px;
+    border-radius: 12px;
+  }
+  .chatHeader h3 { font-size: 15px; }
+  .chatInputBox button{ padding: 8px; }
 }
