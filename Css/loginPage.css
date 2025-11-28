@@ -325,3 +325,30 @@ nav button{
         justify-content: space-evenly;
     }
 }
+@media screen and (max-width:460px){
+    .loginForm::after,.signupForm::after{
+        display: none;
+    }
+    .loginForm{
+        transform: translate(78px, 16px);
+    }
+    .signupForm{
+        transform: translate(0px,20px);
+    }
+    @keyframes popOpen{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+}
+@media screen and (max-width:412px){
+    .loginForm{
+        transform: scale(0.9) translate(120px,2px);
+    }
+    .signupForm{
+        transform: scale(0.9) translate(40px,4px);
+    }
+}
