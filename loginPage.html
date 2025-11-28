@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./Css/loginPage.css">
+</head>
+<body>
+    <nav>
+        <img src="./images/logo-placeholder.png" alt="logo placeholder" height="50px">
+        <div class="navBtns">
+            <button id="loginBtn" class="login">Log In</button>
+            <button id="signUpBtn" class="signup">Sign Up</button>
+        </div>
+    </nav>
+    <main>
+        <div class="loginForm">
+            <h2>Welcome</h2>
+            <h3>Login using your account!</h3>
+            <form action="index.html" method="post">
+                <label for="userName">Username</label>
+                <input type="text" name="userName" id="userName" minlength="2" maxlength="12" required>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required minlength="6" maxlength="12">
+                <div class="helper">
+                    <p>Forgot Password</p>
+                    <div class="rememnberCont">
+                        <input type="checkbox" name="remember" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div> 
+                </div>
+                <input type="submit" id="submit" value="Let's Go Explore!">
+            </form>
+            <p>or</p>
+            <div class="alternateLogin">
+                <a href="setting.html">
+                    <button class="LoginGoog">Log in with <strong>Google</strong></button>
+                </a>
+                <a href="setting.html">
+                    <button class="LoginFace">Log in with <strong>Facebook</strong></button>
+                </a>    
+                
+            </div>      
+        </div>
+        <div class="signupForm">
+            <h2>Hi There!</h2>
+            <h3>Create Your Account</h3>
+            <form action="index.html" method="post">
+                <label for="userName">Username</label>
+                <input type="text" name="userName" id="userName" minlength="2" maxlength="12" required>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required minlength="6" maxlength="12">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+                <input type="submit" id="submit" value="Create Account!">
+            </form>
+            <p>or</p>
+            <div class="alternateLogin">
+                <a href="setting.html">
+                    <button class="signInGoog">Sign Up with <strong>Google</strong></button>
+                </a>
+                <a href="setting.html">
+                    <button class="signInf">Sign Up with <strong>Facebook</strong></button>
+                </a>
+                
+            </div>      
+            
+        </div>
+    </main>
+    <div class="bgObjCont">
+        <div id="backgroundObject1" class="backgroundObject1"></div>
+        <div id="backgroundObject2" class="backgroundObject2"></div>
+        <div id="backgroundObject3" class="backgroundObject3"></div>
+    </div>
+    <div class="loadingWithDark" id="loadingWithDark">
+        <div class="darkFilter" id="darkFilter"></div>
+        <div class="loadingBar" id="loadingBar">
+            <h3>
+                Logging In! Please wait...
+            </h3>
+            <div class="loadingbarCont">
+                <div class="loadingbar"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./Script/login.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: 140ms ease-in-out;
+    font-family: 'Poppins', sans-serif, arial;
+}
+
+:root{
+    --primary_color:#CC1A1A;
+    --gray_color: #DEDEDE;
+    --darker_gray: #3B3B3B;
+    --almost_white: #F5F5F5;
+
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+}
+html::-webkit-scrollbar{
+    display: none;
+}
+
+body{
+    position: relative;
+    overflow: hidden;
+    width: 100svw;
+    height: 100svh;
+    background-color: rgb(233, 233, 233);
+}
+
+nav{
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    padding: 8px;
+    justify-content: space-between;
+    position: relative;
+    background-color: white;
+    border-bottom: 1px solid black;
+}
+.navBtns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-right: 8px;
+    z-index: 2;
+}
+.colorBtn{
+    animation: colorBtn 0.4s ease-in-out;
+}
+@keyframes colorBtn {
+    from{
+        background: hsl(from var(--primary_color) h s calc(l + 40));
+    }
+    to{
+        background-color: var(--primary_color);
+    }
+}
+nav button{
+    padding: 8px;
+    border-radius: 12px;
+    width: 140px;
+    background-color: hsl(from var(--primary_color) h s calc(l + 40));
+    color: white;
+    border:none;
+}
+
+.loginForm{
+    display: none;
+    z-index: 4;
+}
+.signupForm{
+    display: none;
+    z-index: 4;
+}
+.loginForm, .signupForm{
+    flex-direction: column;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    border-radius: 24px;
+    background-color: rgba(255, 255, 255, 0.842);
+    border: 2px solid white;
+    backdrop-filter: blur(4px);
+    padding: 16px;
+}
+.loginForm h2+h3, .signupForm h2+h3{
+    margin-bottom: 24px;
+}
+.loginForm form, .signupForm form{
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    gap: 8px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+.loginForm .alternateLogin, .signupForm .alternateLogin{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.loginForm .alternateLogin button, .signupForm .alternateLogin button{
+    width: 300px;
+    border-radius: 4px;
+    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.651);
+}
+.loginForm form > input, .signupForm form > input{
+    width: 300px;
+    border-radius: 4px;
+    text-align: center;
+    padding: 4px 10px;
+    border: 1px solid black;
+}
+.loginForm form #submit, .signupForm form #submit{
+    padding: 4px;
+    background-color: var(--primary_color);
+    color: white;
+    font-weight: 500;
+}
+.loginForm form .helper{
+    display: flex;
+    font-size: 12px;
+    color: rgb(0, 0, 160);
+    width: 300px;
+    justify-content: space-between;
+}
+.loginForm .alternateLogin button:hover, .loginForm form #submit:hover, 
+.signupForm .alternateLogin button:hover, .signupForm form #submit:hover{
+    transform: scale(1.1);
+}
+.loginForm form > input:focus, .signupForm form > input:focus{
+    outline: #810505;
+    border: 2px solid #810505;
+}
+.loginForm{
+    position:absolute;
+    right: 100px;
+}
+.signupForm{
+    position: absolute;
+    right: 30px;
+}
+
+.loginForm::after, .signupForm::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;   
+    border-right: 20px solid transparent; 
+    border-bottom: 24px solid  rgb(255, 255, 255);
+}
+.loginForm::after{
+    top: 0;
+    transform: translate(60px,-26px);
+    
+}
+.signupForm::after{
+    top: 0;
+    transform: translate(115px,-26px);
+}
+.pop{
+    animation: popOpen ease-in-out 0.3s;
+}
+.bgObjCont .backgroundObject1{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-color: #810505;
+    border-radius: 50%;
+    right: 0;
+    z-index: 1;
+    transform: translate(100px,300px);
+}
+.bgObjCont .backgroundObject2{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: #e48f75;
+    border-radius: 50%;
+    right: 0;
+    transform: translate(-500px,200px);
+    z-index: 1;
+}
+.bgObjCont .backgroundObject3{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #ffe0a5;
+    border-radius: 50%;
+    right: 0;
+    transform: translate(-800px,100px);
+    z-index: 1;   
+}
+
+.loadingBar{
+    display: none;
+    flex-direction: column;
+    width: 400px;
+    border-radius: 14px;
+    position: relative;
+    z-index: 5;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    height: 200px;
+    color: rgb(255, 255, 255);
+    border: 3px solid white;
+    backdrop-filter: blur(4px);
+    background-color: rgba(201, 201, 201, 0.466);
+}
+.loadingBar .loadingbarCont{
+    width: 200px;
+    height: 20px;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+.loadingBar .loadingbarCont .loadingbar{
+    width: 50px;
+    height: 18px;
+    position: absolute;
+    background-color: rgb(86, 248, 22);
+    border-radius: 12px;
+    animation: loading 1s ease-in-out infinite;
+}
+.loadingWithDark{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+.loadingWithDark .darkFilter{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.616);
+    backdrop-filter: blur(2px);
+    z-index: 4;
+    position: absolute;
+    width: 10000px;
+    height: 10000px;
+}
+@keyframes loading {
+    from{
+        transform: translateX(-100px);
+    }
+    to{
+        transform: translateX(200px);
+    }
+    
+}
+@keyframes animBgMove1{
+    to{
+    transform: translate(100px,-200px) rotate(360deg);
+    border-radius: 0;
+    width: 400px;
+    height: 400px;
+    }
+}
+@keyframes animBgMove2{
+    to{
+    transform: translate(-500px,100px) rotate(360deg);
+    border-radius: 0;
+    width: 200px;
+    height: 200px;
+    }
+}
+@keyframes animBgMove3{
+    to{
+    transform: translate(-800px,300px) rotate(360deg);
+    border-radius: 0;
+    width: 100px;
+    height: 100px;
+    }
+}
+@keyframes popOpen{
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@media screen and (min-height:662px) {
+    .loginForm{
+        height: 600px;
+    }
+    .signupForm{
+        height: 600px;
+    }
+}
+
+@media screen and (max-width:512px){
+    .loginForm{
+        transform: translateX(50px);
+    }
+    .loginForm::after{
+        transform: translate(-70px,-26px);
+    }
+    .signupForm::after{
+        transform: translate(68px,-26px);
+    }
+    nav img{
+        display: none;
+    }
+    nav{
+        justify-content: space-evenly;
+    }
+}

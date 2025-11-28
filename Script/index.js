@@ -5,6 +5,24 @@ const tapSound = new Audio('./Audio/Tap.mp3');
 popSound.preload = "auto";
 wooshSound.preload = "auto";
 tapSound.preload = "auto";
+// ==User Authentication ===
+window.addEventListener('DOMContentLoaded', () => {
+  const currentUser = localStorage.getItem('loggedInUser');
+
+  if (!currentUser) {
+    // No user logged in, redirect to login page
+    window.location.href = 'loginPage.html';
+  } else {
+    // Display welcome message
+    const username = document.getElementById(`username`);
+    username.textContent = `${currentUser}`
+  }
+});
+const logoutBtn = document.getElementById(`logoutBtn`);
+logoutBtn.addEventListener("click", ()=>{
+  localStorage.removeItem(`loggedInUser`);
+  window.location.href = "loginPage.html";
+})
 
 // === SIDEBAR ===
 function openSide(){
